@@ -1,6 +1,6 @@
 #include <stdio.h>
-
-
+#include <stdlib.h> 
+#include <time.h>  
 
 int main() {
   int numeorJogador, numeroComputador, resultado;
@@ -23,32 +23,39 @@ int main() {
   printf("Digite seu numero ( entre 1 e 100):");
   scanf ("%d", &numeorJogador);
 
-  printf("Numero do computador é: %d\n", numeroComputador);
+  //printf("Numero do computador é: %d\n", numeroComputador);
 
 
-  switch (tipoComparacao)
+    switch (tipoComparacao)
   {
-  case 'M':
-  case 'm':
-    resultado = numeorJogador numeroComputador
-    break;
-
+    case 'M':
+    case 'm':
+    printf("Você escolheu a opção maior\n");
+    resultado = numeorJogador > numeroComputador ? 1 : 0;
+  break;
     case 'N':
     case 'n':
-    /* code */
-    break;
-  
+    printf("Você escolheru a opção menor\n");
+    resultado = numeorJogador < numeroComputador ? 1 : 0;
+  break;
     case 'I':
     case 'i':
-    /* code */
-    break;
+    printf(" Você escolheu a opção igual\n");
+    resultado = numeorJogador == numeroComputador ? 1 : 0;
+  break;
   
   default:
   printf("Opção de jogo invalida\n");
     break;
   }
- 
-  
+  printf("Numero do computador é: %d e o jogador é: %d\n", numeroComputador, numeorJogador);
+
+  if (resultado == 1)
+  {
+    printf("Você venceu\n");
+  } else {
+    printf("Voce perdeu\n");
+  }
 
 }
   
